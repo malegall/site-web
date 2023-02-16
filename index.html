@@ -29,6 +29,7 @@
 					<li><a href=https://github.com/malegall>Github</a></li>
 				</ul>
 			</div>
+			<img src="menu-btn.png" alt="menu bouton" class="menu-btn">
 		</nav>
 	</header>
 
@@ -71,7 +72,7 @@
 				<br>
 				Ce projet consiste en la création d'un jeu qui utilise l'apprentissage par renforcement. Nous avons donc créé un jeu dont l'entité apprend à jouer et à atteindre un objectif final par ses propres moyens. Le principe de notre jeu se rapproche plus ou moins de celui d'un labyrinthe. <br />
 				<br>
-				Pour plus d'informations,
+				Pour plus d'informations, cliquez sur le gif.
 			</p>
 			<br><br><br><br><br><br>
 			<p class="tipe">
@@ -80,4 +81,12 @@
 		</div>
 	</section>
 </body>
+	<script>
+		const menuHamburger = document.querySelector(".menu-btn")
+		const navLinks = document.querySelector(".nav-links")
+
+		menuHamburger.addEventListener('click',()=>{
+			navLinks.classList.toggle('mobile-menu')
+		})
+	</script>
 </html>
