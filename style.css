@@ -147,7 +147,7 @@ header {
 
 .projet {
     position: relative;
-    top: 200px;
+    top: 300px;
     height: 200vh;
     display: flex;
     justify-content: center;
@@ -170,8 +170,23 @@ header {
     font-size: 1.2em;
 }
 
+.projetcont .p3 {
+    font-size: 1.5em;
+}
 
-.projetcont .p3 img{
+.projetcont .projz1 {
+    font-size: 1.2em;
+    margin-left: 23%;
+    text-align: left;
+}
+
+.projetcont .tipe {
+    font-size: 1.2em;
+    margin-left: 23%;
+    text-align: left;
+}
+
+.projetcont .projz1 img{
     height: 300px;
     width: 300px;
     position: absolute;
@@ -179,3 +194,6 @@ header {
     border: 5px solid #b75023;
 }
 
+.projetcont .imgeorge:hover {
+    filter:blur(3px);
+}
