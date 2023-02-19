@@ -3,8 +3,8 @@
 :root{
     --body-font: 'Poppins', sans-serif;
 
-
-    --biggest-font-size: 3rem;
+    --button-size: 200px;
+    --biggest-font-size: 5rem;
     --h1-font-size: 2.25rem;
     --h2-font-size: 1.5rem;
     --h3-font-size: 1.25rem;
@@ -35,14 +35,16 @@ button,
 input{
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
+    background-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.8)),url(images/bg2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .banner{
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.8)),url(images/bg2.jpg);
-    background-size: cover;
-    background-position: center;
+    
 }
 
 .navbar{
@@ -59,7 +61,7 @@ input{
     font-weight: bold;
     letter-spacing: 1px;
     color: #fff;
-    font-size: var(--biggest-font-size);
+    font-size: 3rem;
 }
 
 .logo-s{
@@ -76,7 +78,7 @@ input{
 .navbar ul li a{
     text-decoration: none;
     color: #fff;
-    font-size: var(--h3-font-size);
+    font-size: 1.25rem;
 }
 
 .navbar ul li::after{
@@ -99,11 +101,11 @@ input{
 }
 
 .navbar .links .linkedin a{
-    font-size: 25px;
+    font-size: 1.5rem;
 }
 
 .navbar .links .github a{
-    font-size: 25px;
+    font-size: 1.5rem;
 }
 
 .content{
@@ -117,7 +119,7 @@ input{
 
 .content h1{
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 70px;
+    font-size: var(--biggest-font-size);
 }
 
 .lg{
@@ -128,6 +130,7 @@ input{
     margin: 20px auto;
     font-weight: 100;
     line-height: 25px;
+    font-size: var(--normal-font-size);
 }
 
 .content-about{
@@ -141,18 +144,18 @@ input{
 
 .section-title{
     text-align: center;
-    font-size: 50px;
+    font-size: var(--h1-font-size);
 }
 
 .section-title::before{
     content: attr(data-heading);
     display: block;
-    font-size: 20px;
+    font-size: var(--h3-font-size);
     color: #009688;
 }
 
 button{
-    width: 200px;
+    width: var(--button-size);
     padding: 15px 0;
     text-align: center;
     margin: 20px 10px;
@@ -163,7 +166,7 @@ button{
     /* cursor: pointer; */
     position: relative;
     overflow: hidden;
-    font-size: 1em;
+    font-size: var(--normal-font-size);
 }
 
 .btn{
@@ -243,8 +246,8 @@ button:hover .btn{
     position: absolute;
     left: 0;
     top: 0;
-    height: 1rem;
-    width: 1rem;
+    height: var(--normal-font-size);
+    width: var(--normal-font-size);
     border: 2px solid #009688;
     border-radius: 50%;
     background-color: #fff;
@@ -262,6 +265,7 @@ button:hover .btn{
 .timeline-title{
     text-decoration: none;
     color: #fff;
+    font-size: var(--normal-font-size);
 }
 
 .projet-content{
@@ -274,6 +278,21 @@ button:hover .btn{
 }
 
 @media screen and (max-width: 900px) {
+    :root{
+        --button-size: 100px;
+        --biggest-font-size: 3rem;
+        --h1-font-size: 1.5rem;
+        --h2-font-size: 1.25rem;
+        --h3-font-size: 1rem;
+        --normal-font-size: .9rem;
+        --small-font-size: .8rem;
+        --smaller-font-size: .75rem;
+    }
+
+    .qualification-container{
+        grid-template-columns: none;
+    }
+
     .menu{
         display: block;
         z-index: 2;
