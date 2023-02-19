@@ -1,92 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Mathis Le Gall</title>
-	<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <title>Mathis Le Gall</title>
 </head>
 <body>
-	<header>
-		<nav class="navbar">
-			<a href="#" class="titre">MATHIS LE GALL</a>
-			<div class="nav-links">
-				<ul>
-					<li class="active">
-						<a href="#index.html">Home</a>
-						<ul class="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<li><a href="#home">
-								
-								About me
-							</a></li>
-							<li><a href="#projet">Mes projets</a></li>
-						</ul>
-					</li>
+    <div class="banner">
+        <div class="navbar">
+            <a href="#" class="logo">ml<span class="logo-s">g</span>.</a>
+            <div class="links">
+                <ul>
+                    <li class="active"><a href="index.html" ac>Accueil</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="projets.html">Projets</a></li>
+                    <li class="linkedin"><a href="https://www.linkedin.com/in/mathis-le-gall"><i class="uil uil-linkedin"></i></a></li>
+                    <li class="github"><a href="https://github.com/malegall"><i class="uil uil-github"></i></a></li>
+                </ul>
+            </div>
+            
+            <div class="menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+                <div class="line4"> </div>
+                <div class="line5"></div>
+            </div>
+        </div>
+    </div>
 
-					<li><a href="projets.html">Projets</a></li>
-					<li><a href=https://www.linkedin.com/in/mathis-le-gall>Linkedin</a></li>
-					<li><a href=https://github.com/malegall>Github</a></li>
-				</ul>
-			</div>
-			<img src="menu-btn.png" alt="menu bouton" class="menu-btn">
-		</nav>
-	</header>
-
-	<section class="home" id="home">
-		<div class="homecont">
-			<h2>
-				ABOUT ME
-			</h2>
-			<br><br>
-			<p class="p1" >
-				Étudiant ingénieur en deuxième année à l'ISIMA. Je me spécialise dans la modélisation mathématique et la science de données. 
-				Passioné par l'informatique et les mathématiques, j'aime notamment l'association des deux comme j'ai pu le faire lors de mon projet de fin de première année.
-				Je suis donc à la recherche d'un stage de 4 à 5 mois à l'étranger, dans n'importe quel domaine de l'informatique.
-			</p>
-			<br><br><br><br>
-			<p class="p2">
-				<img src="isima.jpeg" alt="">
-				Je suis également capitaine et responsable de l'équipe de football de l'ISIMA. Nous sommes engagés dans le championnat universitaire d'Auvergne. 
-				Je pratique également le foot en club depuis mes 7 ans. Actuellement, je suis au FC Cournon-d'Auvergne.
-			</p>
-		</div>
-	</section>
-
-	<section class="projet" id="projet">
-		<div class="projetcont">
-			<br><br><br>
-			<h2>
-				MES PROJETS
-			</h2>
-			<br><br>
-			<p class="p3">
-				Voici des résumés de mes projets, ils sont disponibles sur mon github.
-			</p>
-			<br><br><br>
-			<p class="projz1">
-				<a class="imgeorge" href="projets.html"><img src="https://perso.isima.fr/~rilamrani/projet_1a_isima/siteweb/gif/menu.gif" alt=""></a>
-				<strong>Teleporting Georges :</strong> <br /> 
-				<br>
-				Projet de fin de première année à l'ISIMA réalisé en C à trois. <br />
-				<br>
-				Ce projet consiste en la création d'un jeu qui utilise l'apprentissage par renforcement. Nous avons donc créé un jeu dont l'entité apprend à jouer et à atteindre un objectif final par ses propres moyens. Le principe de notre jeu se rapproche plus ou moins de celui d'un labyrinthe. <br />
-				<br>
-				Pour plus d'informations, cliquez sur le gif.
-			</p>
-			<br><br><br><br><br><br>
-			<p class="tipe">
-				<strong>Fonctionnement et sécurité du cryptosystème d'ElGamal :</strong>
-			</p>
-		</div>
-	</section>
+    <div class="content">
+        <h1>Mathis <span class="lg">Le Gall</span></h1>
+        <p>Étudiant ingénieur en deuxième année à ISIMA, spécialisé dans la modélisation mathématique et science de données.</p>
+        <div>
+            <button type="button" onclick="self.location.href='FR_CV_Mathis.pdf'"><span class="btn"></span>VOIR CV</button>
+            <button type="button" onclick="self.location.href='English_CV_Mathis.pdf'"><span class="btn"></span>READ CV</button>
+        </div>
+    </div>
 </body>
-	<script>
-		const menuHamburger = document.querySelector(".menu-btn")
-		const navLinks = document.querySelector(".nav-links")
 
-		menuHamburger.addEventListener('click',()=>{
-			navLinks.classList.toggle('mobile-menu')
-		})
-	</script>
+<script src="main.js"></script>
+
 </html>
