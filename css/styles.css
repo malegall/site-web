@@ -37,7 +37,7 @@ button,
 input{
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
-    background-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.8)),url(images/bg2.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.8)),url(../img/bg2.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -118,8 +118,8 @@ input{
 .content{
     width: 100%;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 35%;
+    /*transform: translateY(-50%); */
     text-align: center;
     color: #fff;
 }
@@ -143,8 +143,7 @@ input{
 .content-about{
     width: 100%;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 12%;
     color: #fff;
     margin-top: var(--mb-3);
 }
@@ -174,6 +173,11 @@ button{
     position: relative;
     overflow: hidden;
     font-size: var(--normal-font-size);
+    transition: 0.5s;
+}
+
+button:hover{
+    transform: scale(1.1);
 }
 
 .btn{
@@ -190,7 +194,7 @@ button{
 }
 
 button:hover .btn{
-    opacity: 50%;
+    opacity: 50%
 }
 
 .menu{
@@ -282,8 +286,7 @@ button:hover .btn{
 .projet-content{
     width: 100%;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 14%;
     color: #fff;
     margin-top: var(--mb-2);
 }
@@ -300,6 +303,7 @@ button:hover .btn{
     position: relative;
     border-radius: 10px;
     overflow: hidden;
+    margin-bottom: var(--mb-2);
 }
 
 .project img{
@@ -433,10 +437,6 @@ button:hover .btn{
     .links ul li{
         margin: 25px 0;
         font-size: 1.5em;
-    }
-
-    .content-about{
-        margin-top: 12rem;
     }
 
     .education{
