@@ -23,6 +23,8 @@
     --mb-2: 2rem;
     --mb-2-5: 2.5rem;
     --mb-3: 3rem;
+
+    --size-img: 300px;
 }
 
 *{
@@ -73,12 +75,17 @@ input{
     display: inline-block;
     margin: 0 20px;
     position: relative;
+    transition: 0.5s;
 }
 
 .navbar ul li a{
     text-decoration: none;
     color: #fff;
-    font-size: 1.25rem;
+    font-size: var(--h3-font-size);
+}
+
+.navbar ul li:hover{
+    transform: scale(1.1);
 }
 
 .navbar ul li::after{
@@ -139,7 +146,7 @@ input{
     top: 50%;
     transform: translateY(-50%);
     color: #fff;
-    margin-top: var(--mb-2);
+    margin-top: var(--mb-3);
 }
 
 .section-title{
@@ -217,7 +224,7 @@ button:hover .btn{
 }
 
 .qualification-title{
-    font-size: var(--h3-font-size);
+    font-size: var(--h2-font-size);
     font-weight: var(--font-medium);
     margin-bottom: var(--mb-1-5);
 }
@@ -265,7 +272,11 @@ button:hover .btn{
 .timeline-title{
     text-decoration: none;
     color: #fff;
-    font-size: var(--normal-font-size);
+    /* font-size: var(--normal-font-size); */
+}
+
+.timeline-loc{
+    margin-bottom: var(--mb-1);
 }
 
 .projet-content{
@@ -279,7 +290,7 @@ button:hover .btn{
 
 .project-list{
     display: grid;
-    grid-template-columns: repeat(3,400px);
+    grid-template-columns: repeat(auto-fit,var(--size-img));
     column-gap: 4rem;
     justify-content: center;
     margin-top: 50px;
@@ -292,8 +303,8 @@ button:hover .btn{
 }
 
 .project img{
-    height: 400px;
-    width: 400px;
+    height: var(--size-img);
+    width: var(--size-img);
     display: block;
     border-radius: 10px;
     transition: transform 0.5s;
@@ -303,6 +314,7 @@ button:hover .btn{
     width: 100%;
     height: 0;
     background: linear-gradient(rgba(0,0,0,0.6),#009688);
+    backdrop-filter: blur(2px);
     border-radius: 10px;
     position: absolute;
     left: 0;
@@ -317,6 +329,7 @@ button:hover .btn{
 
 .layer h3{
     opacity: 0;
+    font-size: var(--normal-font-size);
     font-weight: var(--font-bold);
     margin-bottom: var(--mb-1-5);
 }
@@ -333,20 +346,15 @@ button:hover .btn{
 }
 
 .layer p{
+    font-size: var(--small-font-size);
     opacity: 0;
 }
 
 .layer a{
     margin-top: var(--mb-1-5);
-    color: #009688;
+    color: #fff;
     text-decoration: none;
     font-size: var(--h1-font-size);
-    line-height: 60px;
-    background-color: #fff;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    text-align: center;
 }
 
 .project:hover img{
@@ -379,6 +387,8 @@ button:hover .btn{
         --normal-font-size: .9rem;
         --small-font-size: .8rem;
         --smaller-font-size: .75rem;
+        --mb-1-5: 1rem;
+        --size-img: 200px;
     }
 
     .qualification-container{
@@ -423,6 +433,14 @@ button:hover .btn{
     .links ul li{
         margin: 25px 0;
         font-size: 1.5em;
+    }
+
+    .content-about{
+        margin-top: 12rem;
+    }
+
+    .education{
+        margin-top: var(--mb-2);
     }
 }
 
