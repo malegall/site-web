@@ -4,17 +4,19 @@
     --body-font: 'Poppins', sans-serif;
 
     --button-size: 200px;
+    
+    /*-------- Font --------*/
     --biggest-font-size: 5rem;
-    --h1-font-size: 2.25rem;
+    --h1-font-size: 2rem;
     --h2-font-size: 1.5rem;
     --h3-font-size: 1.25rem;
     --normal-font-size: 1rem;
     --small-font-size: .875rem;
     --smaller-font-size: .8rem;
-
     --font-medium: 500;
     --font-bold: 600;
 
+    /*-------- Margin --------*/
     --mb-0-25: .25rem;
     --mb-0-5: .5rem;
     --mb-0-75: .75rem;
@@ -24,30 +26,80 @@
     --mb-2-5: 2.5rem;
     --mb-3: 3rem;
 
-    --size-img: 300px;
+    --size-img: 400px;
+
+    /*-------- z-index --------*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+}
+
+html{
+    scroll-behavior: smooth 2s;
 }
 
 *{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 body,
 button,
-input{
+input,
+textarea{
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
+}
+
+body{
     background-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.8)),url(../img/bg2.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
 
-.banner{
-    width: 100%;
-    height: 100vh;
-    
+
+/*-------- CLASSES RÉUTILISABLES --------*/
+
+.section-title{
+    text-align: center;
+    font-size: var(--h1-font-size);
 }
+
+.section-title::before{
+    content: attr(data-heading);
+    display: block;
+    font-size: var(--h3-font-size);
+    color: #009688;
+}
+
+button{
+    width: var(--button-size);
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    border: 2px solid #009688;
+    background: transparent;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    font-size: var(--normal-font-size);
+    transition: 0.5s;
+}
+
+button:hover{
+    transform: scale(1.1);
+}
+
+img{
+    max-width: var(--size-img);
+    height: auto;
+}
+
+
+/*-------- NAVBAR --------*/
 
 .navbar{
     width: 85%;
@@ -64,10 +116,20 @@ input{
     letter-spacing: 1px;
     color: #fff;
     font-size: 3rem;
+    transition: .5s;
 }
 
 .logo-s{
     color: #009688;
+    transition: .5s;
+}
+
+.logo:hover{
+    color: #009688;
+}
+
+.logo:hover .logo-s{
+    color: #fff;
 }
 
 .navbar ul li{
@@ -115,72 +177,111 @@ input{
     font-size: 1.5rem;
 }
 
+.menu{
+    background-color: #0096875f;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+    display: none;
+}
+
+.menu div{
+    position: relative;
+    width: 30px;
+    height: 2px;
+    top: 8px;
+    justify-content: center;
+    background-color: #fff;
+    margin: 6px auto;
+    border-radius: 25px;
+}
+
+.menu div:nth-child(4){
+    display: none;
+}
+
+.mobile-menu{
+    margin-left: 0;
+}
+
+
+/*-------- HOMEPAGE --------*/
+
 .content{
     width: 100%;
     position: absolute;
-    top: 35%;
-    /*transform: translateY(-50%); */
+    top: 30%;
     text-align: center;
     color: #fff;
 }
 
+.topline{
+    display: block;
+    position: relative;
+    font-size: var(--h1-font-size);
+    letter-spacing: 2px;
+}
+
+.topline::after{
+    position: absolute;
+    content: '';
+    height: 4px;
+    width: 45px;
+    bottom: 10px;
+    background-color: #009688;
+}
+
 .content h1{
-    font-family: 'Josefin Sans', sans-serif;
     font-size: var(--biggest-font-size);
+    font-weight: var(--font-bold);
+    transition: .5s;
+}
+
+.content h1:hover{
+    color: #009688;
+}
+
+.content h1:hover .lg{
+    color: #fff;
 }
 
 .lg{
     color: #009688;
+    transition: .5s;
 }
 
 .content p{
-    margin: 20px auto;
+    margin: 10px auto;
     font-weight: 100;
     line-height: 25px;
     font-size: var(--normal-font-size);
 }
 
-.content-about{
-    width: 100%;
-    position: absolute;
-    top: 12%;
+.home-social li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 10px;
+    position: relative;
+    transition: .5s;
+}
+
+.home-social li a{
+    text-decoration: none;
     color: #fff;
-    margin-top: var(--mb-3);
-}
-
-.section-title{
-    text-align: center;
     font-size: var(--h1-font-size);
+    transition: .5s;
 }
 
-.section-title::before{
-    content: attr(data-heading);
-    display: block;
-    font-size: var(--h3-font-size);
+.home-links li:hover{
+    transform: scale(1.2);
+}
+
+.home-links li:hover a{
     color: #009688;
 }
 
-button{
-    width: var(--button-size);
-    padding: 15px 0;
-    text-align: center;
-    margin: 20px 10px;
-    border-radius: 25px;
-    border: 2px solid #009688;
-    background: transparent;
-    color: #fff;
-    /* cursor: pointer; */
-    position: relative;
-    overflow: hidden;
-    font-size: var(--normal-font-size);
-    transition: 0.5s;
-}
-
-button:hover{
-    transform: scale(1.1);
-}
-
-.btn{
+.btn-cv{
     background: #009688;
     width: 100%;
     height: 100%;
@@ -193,30 +294,19 @@ button:hover{
     transition: 0.5s;
 }
 
-button:hover .btn{
+button:hover .btn-cv{
     opacity: 50%
 }
 
-.menu{
-    display: none;
-}
 
-.menu div{
-    position: relative;
-    width: 30px;
-    height: 4px;
-    justify-content: center;
-    background-color: #fff;
-    margin: 5px auto;
-    border-radius: 25px;
-}
+/*-------- ABOUT --------*/
 
-.menu div:nth-child(n+4) {
-    display: none;
-}
-
-.mobile-menu{
-    margin-left: 0;
+.content-about{
+    width: 100%;
+    position: absolute;
+    top: 12%;
+    color: #fff;
+    margin-top: var(--mb-3);
 }
 
 .qualification-container{
@@ -276,12 +366,14 @@ button:hover .btn{
 .timeline-title{
     text-decoration: none;
     color: #fff;
-    /* font-size: var(--normal-font-size); */
 }
 
 .timeline-loc{
     margin-bottom: var(--mb-1);
 }
+
+
+/*-------- PROJETS --------*/
 
 .projet-content{
     width: 100%;
@@ -293,7 +385,7 @@ button:hover .btn{
 
 .project-list{
     display: grid;
-    grid-template-columns: repeat(auto-fit,var(--size-img));
+    grid-template-columns: repeat(auto-fit,minmax(200px,var(--size-img)));
     column-gap: 4rem;
     justify-content: center;
     margin-top: 50px;
@@ -307,8 +399,6 @@ button:hover .btn{
 }
 
 .project img{
-    height: var(--size-img);
-    width: var(--size-img);
     display: block;
     border-radius: 10px;
     transition: transform 0.5s;
@@ -381,9 +471,12 @@ button:hover .btn{
     opacity: 100%;
 }
 
+
+/*-------- RESPONSIVE --------*/
+
 @media screen and (max-width: 900px) {
     :root{
-        --button-size: 100px;
+        --button-size: 150px;
         --biggest-font-size: 3rem;
         --h1-font-size: 1.5rem;
         --h2-font-size: 1.25rem;
