@@ -45,6 +45,10 @@ body{
     padding: 0;
 }
 
+body::-webkit-scrollbar{
+    display: none;
+}
+
 body,
 button,
 input,
@@ -204,7 +208,6 @@ a{
     margin-left: 0;
 }
 
-
 /*-------- HOMEPAGE --------*/
 
 .content{
@@ -273,7 +276,7 @@ a{
 }
 
 .home-links li:hover{
-    transform: scale(1.2);
+    transform: translateY(-.5rem);
 }
 
 .home-links li:hover a{
@@ -417,7 +420,7 @@ button:hover .btn-cv{
     margin-bottom: mb;
 }
 
-.btn-project{
+.btn-project1{
     color: #009688;
     font-size: var(--normal-font-size);
     display: flex;
@@ -426,31 +429,83 @@ button:hover .btn-cv{
     cursor: pointer;
 }
 
-.btn-project i{
+.btn-project1 i{
     font-size: var(--smaller-font-size);
     transition: .5s;
 }
 
-.btn-project:hover i{
+.btn-project1:hover i{
     transform: translateX(.25rem);
 }
 
+.btn-project2{
+    color: #009688;
+    font-size: var(--normal-font-size);
+    display: flex;
+    align-items: center;
+    column-gap: .25rem;
+    cursor: pointer;
+}
+
+.btn-project2 i{
+    font-size: var(--smaller-font-size);
+    transition: .5s;
+}
+
+.btn-project2:hover i{
+    transform: translateX(.25rem);
+}
+.btn-project3{
+    color: #009688;
+    font-size: var(--normal-font-size);
+    display: flex;
+    align-items: center;
+    column-gap: .25rem;
+    cursor: pointer;
+}
+
+.btn-project3 i{
+    font-size: var(--smaller-font-size);
+    transition: .5s;
+}
+
+.btn-project3:hover i{
+    transform: translateX(.25rem);
+}
+
+.project-details{
+    display: none;
+}
 
 /*-------- PROJET POPUP --------*/
 
-.project-popup{
+.teleport-georges-popup,
+.jsp-popup,
+.el-gamal-popup{
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    backdrop-filter: blur(6px);
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(6px);
     z-index: var(--z-modal);
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 1rem;
     transition: .5s;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.teleport-georges-popup.open,
+.jsp-popup.open,
+.el-gamal-popup.open{
+    opacity: 1;
+    visibility: visible;
 }
 
 .project-popup-inner{
@@ -473,7 +528,9 @@ button:hover .btn-cv{
     display: none;
 }
 
-.popup-close{
+.popup-close1,
+.popup-close2,
+.popup-close3{
     position: absolute;
     top: 1.5rem;
     right: 1.5rem;
@@ -551,6 +608,7 @@ button:hover .btn-cv{
         position: absolute;
         background-color: rgba(0, 0, 0, 0.8);
         backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
         height: 100vh;
         width: 100%;
         display: flex;
@@ -588,7 +646,3 @@ button:hover .btn-cv{
         padding: 12.5px;
     }
 }
-
-
-
-
