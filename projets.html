@@ -103,10 +103,10 @@
                     <div class="partie">
                         <span>II</span> - Présentation du jeu en mode normal
                     </div>
-                    <h2 class="teleportation">Mouvement de téléportation</h2>
+                    <h2 class="subpartie">Mouvement de téléportation</h2>
                     <p>Comme nous l'avons expliqué précedemment, nous devons guider notre personnage de la case de départ vers la case d'arrivée en passant par des téléporteurs.
                         Les téléporteurs sont liés deux à deux avec une couleur précise. Quand le personnage arrive sur un téléporteur, nous remarquons comme sur l'image qu'il fait une animation qui le mène vers le téléporteur correspondant.</p>
-                    <div class="georges-teleportation">
+                    <div class="georges-gif">
                         <img src="https://perso.isima.fr/~rilamrani/projet_1a_isima/siteweb/gif/mvt_teleportation.gif">
                         <figcaption>Mouvement de téléportation</figcaption>
                     </div>
@@ -114,6 +114,55 @@
                         <img src="https://perso.isima.fr/~rilamrani/projet_1a_isima/siteweb/images/teleport.png">
                         <figcaption>Code de téléportation</figcaption>
                     </div>
+                    <h2 class="subpartie">Mort du personnage</h2>
+                    <p>Si notre personnage touche un trou, il est remis sur la position de départ. Nous utilisons l'animation de téléportation. En effet, la mort du personnage le téléporte directement sur la case de départ.</p>
+                    <div class="georges-gif">
+                        <img src="https://perso.isima.fr/~rilamrani/projet_1a_isima/siteweb/gif/mort.gif">
+                        <figcaption>Mort du personnage</figcaption>
+                    </div>
+                    <h2 class="subpartie">Victoire du personnage</h2>
+                    <p>Lorsque le personnage atteint la case finale, il effectue un petit saut en tournant sur lui-même.</p>
+                    <div class="georges-gif">
+                        <img src="https://perso.isima.fr/~rilamrani/projet_1a_isima/siteweb/gif/animVictory.gif">
+                        <figcaption>Mort du personnage</figcaption>
+                    </div>
+                    <div class="partie">
+                        <span>III</span> - Présentation du jeu en mode IA
+                    </div>
+                    <div class="georges-gif">
+                        <img src="https://perso.isima.fr/~rilamrani/projet_1a_isima/siteweb/images/directions.png">
+                    </div>
+                    <p>
+                        Nos perceptions sont en fonction des positions x et y du personnage dans la map. Nous avons 529 états qui dépendent de 4 directions. <br>
+                        <br>L’IA suit l’algorithme de Q-Learning. Ainsi notre QTable est une matrice 529x4.<br>
+                        <br>Notre système de reward est simple: 1 si le personnage a atteint le point d’arrivée, 0 sinon. Afin de déterminer les paramètres xi et gamma, nous avons réalisé différentes modélisations sur 500 000 générations.
+                        Les meilleurs résultats sont pour xi = 0.8 et gamma = 0.93. <br>
+                        <br>Le choix des actions est suivant l’algorithme E-greedy. Notre epsilon est une suite géométrique de paramètre 0.999. 
+                        Pour notre modélisation finale, cet epsilon décroit tous les 150 générations. <br>
+                        <br>Une fois cette modélisation faite, on sauvegarde la QTable résultante et on la charge dans le programme global pour faire bouger notre personnage 
+                        avec l’expérience des générations précédentes.
+                    </p>
+                    <div class="georges-qtable">
+                        <img src="https://perso.isima.fr/~rilamrani/projet_1a_isima/siteweb/images/screenQtable.png">
+                        <figcaption>États 264, 265 et 266 de la QTable</figcaption>
+                    </div>
+                    <p>
+                        Notre point d'arrivée correspond à l’état 265, les états 264 et 266 correspondent respectivement aux cases à gauche et droite de la case finale.
+                        <br>On remarque bien que les 1 dans les colonnes RIGHT et LEFT de chaque état. <br>
+                        <br> Voici une démonstration du jeu en mode IA:
+                    </p>
+                    <div class="georges-gif">
+                        <img src="https://perso.isima.fr/~rilamrani/projet_1a_isima/siteweb/gif/IA.gif">
+                        <figcaption>Démo de l'IA</figcaption>
+                    </div>
+                    <div class="partie">
+                        <span>IV</span> - Conclusion
+                    </div>
+                    <h3>Pistes d'amélioration:</h3>
+                    <ul class="teleport-georges-mode">
+                        <li class="partie5">Mieux gérer les touches pour le mode normal.</li>
+                        <li class="partie5">Chercher un objet pour débloquer la sortie.</li>
+                    </ul>
                 </div>
             </div>
             
@@ -124,7 +173,7 @@
         <div class="project-popup-inner" id="top-popup">
             <span class="popup-close3"><i class='bx bx-x-circle'></i></span>
             <div class="popup-description">
-                <h1 class="popup-title">Cryptosystème d'ElGamal</h1>
+                <h1 class="popup-title">Cryptosystème d'ElGamal <a href="https://github.com/malegall/Cryptosysteme_ElGamal"><i class='bx bx-link' ></i></a></h1>
                 <p>Voici ci-dessous la présentation visuelle du projet:</p>
                 <div class="slider">
                     <img src="img/Beamer/beam1.png" alt="beam1" class="img-slider active">

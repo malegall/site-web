@@ -27,7 +27,7 @@
     --mb-3: 3rem;
     --mb-4: 4rem;
 
-    --size-img: 400px;
+    --size-img: 20vw;
 
     /*-------- z-index --------*/
     --z-tooltip: 10;
@@ -388,7 +388,7 @@ button:hover .btn-cv{
 
 .project-list{
     display: grid;
-    grid-template-columns: repeat(auto-fit,450px);
+    grid-template-columns: repeat(auto-fit,calc(20vw + 50px));
     column-gap: 4rem;
     justify-content: center;
     padding-top: 2rem;
@@ -616,43 +616,57 @@ button:hover .btn-cv{
 
 .structures{
     display: grid;
-    grid-template-columns: repeat(auto-fit,350px);
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit,20vw);
     margin-top: var(--mb-2);
     margin-bottom: var(--mb-4);
     justify-content: center;
+    align-items: center;
 }
 
 .structures img{
-    max-height: 150px;
-    max-width: 100%;
+    max-width: 20vw;
+    max-height: auto;
     border-radius: .5rem;
 }
 
-.teleportation{
+.subpartie{
     font-size: var(--h2-font-size);
     margin-bottom: var(--mb-0-5);
 }
 
-.georges-teleportation{
+.georges-gif{
     margin-top: var(--mb-2);
     margin-bottom: var(--mb-2);
     text-align: center;
 }
 
-.georges-teleportation img{
-    max-width: 400px;
+.georges-gif img{
+    max-width: 25vw;
     max-height: 100%;
     border-radius: .5rem;
 }
 
 .teleportation-code{
     margin-top: var(--mb-2);
-    margin-bottom: var(--mb-2);
+    margin-bottom: var(--mb-3);
     text-align: center;
 }
 
 .teleportation-code img{
-    max-width: 800px;
+    max-width: 55vw;
+    max-height: 100%;
+    border-radius: .5rem;
+}
+
+.georges-qtable{
+    margin-top: var(--mb-2);
+    margin-bottom: var(--mb-2);
+    text-align: center;
+}
+
+.georges-qtable img{
+    max-width: 50vw;
     max-height: 100%;
     border-radius: .5rem;
 }
