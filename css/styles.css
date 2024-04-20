@@ -1,12 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@font-face {
+    font-family: 'SF Mono';
+    src: local('SF Mono'), local('SFMono-Regular'), url('~/Library/Fonts/SF-Mono-Regular.otf') format('otf');
+    font-weight: 400;
+    font-style: normal;
+}
+
 
 :root{
     --body-font: 'Poppins', sans-serif;
+    --title-font: 'SF Mono', monospace;
 
     --button-size: 200px;
     
     /*-------- Font --------*/
-    --biggest-font-size: 5rem;
+    --biggest-font-size: 3.5rem;
     --h1-font-size: 2rem;
     --h2-font-size: 1.5rem;
     --h3-font-size: 1.25rem;
@@ -33,6 +41,16 @@
     --z-tooltip: 10;
     --z-fixed: 100;
     --z-modal: 1000;
+
+    /*-------- Colors --------*/
+    --navy: #0a192f;
+    --light-navy: #112240;
+    --lightest-navy: #233554;
+    --slate: #8892b0;
+    --light-slate: #a8b2d1;
+    --lightest-slate: #ccd6f6;
+    --white: #ffffff;
+    --green: #64ffda;
 }
 
 html,
@@ -59,10 +77,11 @@ textarea{
 }
 
 body{
-    background-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.8)),url(../img/bg2.jpg);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-color: var(--navy);
+}
+
+p{
+    font-family: var(--title-font);
 }
 
 
@@ -84,19 +103,21 @@ button{
     width: var(--button-size);
     padding: 15px 0;
     text-align: center;
-    margin: 20px 10px;
-    border-radius: 25px;
-    border: 2px solid #009688;
+    margin: 20px 0;
+    border-radius: 5px;
+    border: 1px solid var(--green);
     background: transparent;
-    color: #fff;
+    color: var(--green);
     position: relative;
     overflow: hidden;
     font-size: var(--normal-font-size);
     transition: 0.5s;
+    font-family: var(--title-font);
 }
 
 button:hover{
     transform: scale(1.1);
+    cursor:pointer;
 }
 
 a{
@@ -118,22 +139,26 @@ a{
     text-decoration: none;
     font-weight: bold;
     letter-spacing: 1px;
-    color: #fff;
+    color: var(--lightest-slate);
     font-size: 3rem;
     transition: .5s;
 }
 
 .logo-s{
-    color: #009688;
+    color: var(--green);
     transition: .5s;
 }
 
 .logo:hover{
-    color: #009688;
+    color: var(--green);
 }
 
 .logo:hover .logo-s{
-    color: #fff;
+    color: var(--lightest-slate);
+}
+
+.number-nav{
+    color: var(--green);
 }
 
 .navbar ul li{
@@ -142,35 +167,17 @@ a{
     margin: 0 20px;
     position: relative;
     transition: 0.5s;
+    font-family: var(--title-font);
 }
 
 .navbar ul li a{
     text-decoration: none;
-    color: #fff;
-    font-size: var(--h3-font-size);
+    color: var(--lightest-slate);
+    font-size: var(--normal-font-size);
 }
 
 .navbar ul li:hover{
     transform: scale(1.1);
-}
-
-.navbar ul li::after{
-    content: '';
-    height: 3px;
-    width: 0;
-    background: #009688;
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    transition: 0.5s;
-}
-
-.navbar ul li:hover::after{
-    width: 100%;
-}
-
-.navbar .links ul li.active a{
-    color: #009688;
 }
 
 .navbar .links .linkedin a{
@@ -209,56 +216,75 @@ a{
     margin-left: 0;
 }
 
+/* SECTIONS */
+
+section {
+    height: 96vh;
+    box-sizing: border-box;
+    min-height: fit-content;
+  }
+  
+  .section-container {
+    display: flex;
+  }
+
+  
+
 /*-------- HOMEPAGE --------*/
 
+#profile {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 60vh;
+  }
+
 .content{
-    width: 100%;
-    position: absolute;
-    top: 30%;
-    text-align: center;
+    position: relative;
+    top: 13%;
+    max-width: 60%;
     color: #fff;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .topline{
     display: block;
     position: relative;
-    font-size: var(--h1-font-size);
+    font-size: var(--h3-font-size);
     letter-spacing: 2px;
-}
-
-.topline::after{
-    position: absolute;
-    content: '';
-    height: 4px;
-    width: 45px;
-    bottom: 10px;
-    background-color: #009688;
+    font-family: var(--title-font);
+    color: var(--green);
+    margin-bottom: 20px;
 }
 
 .content h1{
     font-size: var(--biggest-font-size);
     font-weight: var(--font-bold);
     transition: .5s;
+    color: var(--lightest-slate);
 }
 
-.content h1:hover{
-    color: #009688;
-}
-
-.content h1:hover .lg{
-    color: #fff;
+.content h2{
+    font-size: var(--biggest-font-size);
+    font-weight: var(--font-bold);
+    transition: .5s;
+    color: var(--light-slate);
+    margin-bottom: 20px;
 }
 
 .lg{
-    color: #009688;
+    color: var(--green);
     transition: .5s;
 }
 
 .content p{
-    margin: 10px auto;
+    max-width: 50%;
     font-weight: 100;
     line-height: 25px;
     font-size: var(--normal-font-size);
+    color: var(--light-slate);
+    margin-bottom: 20px;
 }
 
 .home-social li{
@@ -271,7 +297,7 @@ a{
 
 .home-social li a{
     text-decoration: none;
-    color: #fff;
+    color: var(--lightest-slate);
     font-size: var(--h1-font-size);
     transition: .5s;
 }
@@ -281,14 +307,14 @@ a{
 }
 
 .home-links li:hover a{
-    color: #009688;
+    color: var(--green);
 }
 
 .btn-cv{
-    background: #009688;
+    background: var(--green);
     width: 100%;
     height: 100%;
-    border-radius: 25px;
+    border-radius: 5px;
     position: absolute;
     left: 0;
     bottom: 0;
@@ -298,16 +324,19 @@ a{
 }
 
 button:hover .btn-cv{
-    opacity: 50%
+    opacity: 20%
 }
 
 
 /*-------- ABOUT --------*/
 
+#about{
+    position: relative;
+    transition: .5s;
+}
+
 .content-about{
     width: 100%;
-    position: absolute;
-    top: 12%;
     color: #fff;
     margin-top: var(--mb-3);
 }
@@ -378,10 +407,12 @@ button:hover .btn-cv{
 
 /*-------- PROJETS --------*/
 
+#projets{
+    position: relative;
+}
+
 .projet-content{
     width: 100%;
-    position: absolute;
-    top: 14%;
     color: #fff;
     margin-top: var(--mb-2);
 }
