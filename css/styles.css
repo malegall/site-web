@@ -8,6 +8,7 @@
 
 
 :root{
+    --header-height: 3rem;
     --body-font: 'Poppins', sans-serif;
     --title-font: 'SF Mono', monospace;
 
@@ -121,7 +122,113 @@ a{
     text-decoration: none;
 }
 
+.grid{
+    display: grid;
+}
+
+.header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    background-color: var(--navy);
+}
+
 /*-------- NAVBAR --------*/
+
+.nav{
+    max-width: 968px;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--light-slate);
+    padding: 1rem;
+}
+
+.nav a, span{
+    color: var(--light-slate);
+}
+
+.nav-menu ul li{
+    transition: .5s;
+}
+
+.link-color,
+.logo-color{
+    color: var(--green);
+}
+
+.nav-logo{
+    font-weight: var(--font-bold);
+    font-size: var(--h1-font-size);
+    font-family: var(--title-font);
+}
+
+.nav-toggle,
+.nav-close{
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.nav-toggle {
+    transform: rotate(-90deg);
+}
+
+.nav-item:hover{
+    transform: scale(1.1);
+}
+
+.nav-toggle:hover,
+.nav-close:hover{
+    color: var(--green);
+}
+
+@media screen and (max-width: 767px) {
+    .nav-menu{
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--navy);
+        padding: 2rem 1.5rem 4rem;
+        box-shadow: 0 1px 4px rgba(255, 255, 255, 0.05);
+        border-radius: 0 0 1.5rem 1.5rem;
+        transition: 1s;
+        z-index: 1;
+    }
+}
+
+.nav-list{
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-link{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: var(--small-font-size);
+    font-weight: var(--font-medium);
+    font-family: var(--title-font);
+}
+
+.nav-close{
+    position: absolute;
+    right: 1.3rem;
+    bottom: .5rem;
+    font-size: 1.5rem;
+}
+
+.nav-menu.open{
+    top: 0;
+}
+
+
+
+
 
 .navbar{
     width: 85%;
@@ -218,6 +325,7 @@ section {
     height: 96vh;
     box-sizing: border-box;
     min-height: fit-content;
+    margin-bottom: 5rem;
   }
   
   .section-container {
@@ -229,7 +337,7 @@ section {
 /*-------- HOMEPAGE --------*/
 
 #profile {
-    display: flex;
+    display: relative;
     justify-content: center;
     align-items:center;
     height: 60vh;
@@ -237,7 +345,7 @@ section {
 
 .content{
     position: relative;
-    top: 13%;
+    top: 20%;
     max-width: 75%;
     color: #fff;
     margin-left: auto;
@@ -310,7 +418,8 @@ section {
 /*-------- ABOUT --------*/
 
 #about{
-    position: relative;
+    position: flex;
+    margin-top: 150px;
     transition: .5s;
     max-width: 50%;
     margin-left: auto;
@@ -426,7 +535,7 @@ section {
 
 #projets{
     position: flex;
-    margin-top: 200px;
+    margin-top: 150px;
 }
 
 .projet-content{
@@ -828,7 +937,7 @@ section {
         top: 0;
         left: 0;
         position: absolute;
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: var(--lightest-navy-o);
         backdrop-filter: blur(6px);
         -webkit-backdrop-filter: blur(6px);
         height: 100vh;
@@ -866,5 +975,40 @@ section {
 
     .project{
         padding: 12.5px;
+    }
+
+    .content{
+        top: 10%;
+    }
+
+}
+
+
+@media screen and (min-width: 767px){
+    .nav{
+        height: calc((--header-height) + 1.5rem);
+        max-width: 100%;
+        padding: 2rem 5rem;
+        box-shadow: 0 1px 4px rgba(255, 255, 255, 0.05);
+    }
+    .nav-toggle{
+        display: none;
+    }
+
+    #nav_close{
+        display: none;
+    }
+
+    .nav-list{
+        display: flex;
+    }
+
+    .nav-menu{
+        margin-left: auto;
+    }
+
+    .nav-link{
+        display: block;
+        flex-direction: row;
     }
 }

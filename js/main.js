@@ -6,12 +6,42 @@ var typed = new Typed(".lg", {
     loop: true
 })
 
-const menuHamburger = document.querySelector(".menu")
-const navLinks = document.querySelector(".links")
+const navMenu = document.querySelector(".nav-menu")
+const navToggle = document.querySelector(".nav-toggle")
+const navClose = document.querySelector(".nav-close")
+const navItems = document.querySelectorAll(".nav-item")
+const navLinks = document.querySelectorAll(".nav-link")
+const navbarHeight = document.querySelector(".nav").offsetHeight; // Hauteur de la navbar
 
-menuHamburger.addEventListener('click',()=>{
-    navLinks.classList.toggle('mobile-menu')
-})
+if(navToggle){
+    navToggle.addEventListener('click', () =>{
+        navMenu.classList.toggle('open');
+    })
+}
+
+if(navClose){
+    navClose.addEventListener('click', () =>{
+        navMenu.classList.remove('open');
+    })
+}
+
+navLinks.forEach(item => {
+    item.addEventListener('click', (event) => {
+        event.preventDefault(); // Empêcher le comportement par défaut du lien
+        const targetId = item.getAttribute("href"); // Récupérer l'ID de la cible
+        const targetSection = document.querySelector(targetId); // Sélectionner la section cible
+        const targetPosition = targetSection.offsetTop - navbarHeight; // Calculer la position de la section cible avec décalage
+
+        // Faire défiler jusqu'à la section cible avec décalage
+        window.scrollTo({
+            top: targetPosition,
+            behavior: "smooth" // Défilement fluide
+        });
+    });
+    item.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+    });
+});
 
 const btn_project1 = document.querySelector(".btn-project1")
 const jsp = document.querySelector(".jsp-popup")
