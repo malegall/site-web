@@ -226,18 +226,6 @@ a{
     top: 0;
 }
 
-
-
-
-
-.navbar{
-    width: 85%;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
 .logo{
     text-decoration: none;
     font-weight: bold;
@@ -264,59 +252,15 @@ a{
     color: var(--green);
 }
 
-.navbar ul li{
-    list-style: none;
-    display: inline-block;
-    margin: 0 20px;
-    position: relative;
-    transition: 0.5s;
-    font-family: var(--title-font);
+.github,
+.linkedin{
+    color: var(--green);
+    font-size: var(--h3-font-size);
 }
 
-.navbar ul li a{
-    text-decoration: none;
-    color: var(--lightest-slate);
-    font-size: var(--normal-font-size);
-}
-
-.navbar ul li:hover{
-    transform: scale(1.1);
-}
-
-.navbar .links .linkedin a{
-    font-size: 1.5rem;
-}
-
-.navbar .links .github a{
-    font-size: 1.5rem;
-}
-
-.menu{
-    background-color: #0096875f;
-    border: 2px solid #fff;
-    border-radius: 50px;
-    height: 50px;
-    width: 50px;
-    display: none;
-}
-
-.menu div{
-    position: relative;
-    width: 30px;
-    height: 2px;
-    top: 8px;
-    justify-content: center;
-    background-color: #fff;
-    margin: 6px auto;
-    border-radius: 25px;
-}
-
-.menu div:nth-child(4){
-    display: none;
-}
-
-.mobile-menu{
-    margin-left: 0;
+.github:hover{
+    transform: translateY(2px);
+    cursor:pointer;
 }
 
 /* SECTIONS */
@@ -391,6 +335,16 @@ section {
     margin-bottom: 20px;
 }
 
+.social-links{
+    display: flex;
+    align-items: center;
+}
+
+.home-social{
+    transition: .5s;
+    margin-left: 1rem;
+}
+
 .home-social li{
     list-style: none;
     display: inline-block;
@@ -401,17 +355,12 @@ section {
 
 .home-social li a{
     text-decoration: none;
-    color: var(--lightest-slate);
-    font-size: var(--h1-font-size);
-    transition: .5s;
-}
-
-.home-links li:hover{
-    transform: translateY(-.5rem);
-}
-
-.home-links li:hover a{
     color: var(--green);
+    font-size: var(--h1-font-size);
+}
+
+.home-social li:hover {
+    transform: translateY(-.5rem);
 }
 
 
@@ -909,7 +858,7 @@ section {
 @media screen and (max-width: 900px) {
     :root{
         --button-size: 150px;
-        --biggest-font-size: 3rem;
+        --biggest-font-size: 2rem;
         --h1-font-size: 1.5rem;
         --h2-font-size: 1.25rem;
         --h3-font-size: 1rem;
