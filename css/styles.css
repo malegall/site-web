@@ -377,12 +377,16 @@ section {
 
 .qualification-container {
     display: grid;
-    grid-template-columns: 50% 70%; /* La première colonne a maintenant une largeur de 400px */
-    column-gap: 5rem;
+    grid-template-columns: 1fr;
+    column-gap: 0;
     justify-content: center;
     margin-top: var(--mb-2);
+    width: 100%;
 }
 
+.qualification-container .content-exp + .content-exp {
+    margin-top: var(--mb-2-5);
+}
 
 /*-------- EXP --------*/
 
@@ -392,6 +396,7 @@ section {
     font-family: var(--title-font);
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
 }
 
 .content-exp h1{
@@ -867,10 +872,6 @@ section {
         --smaller-font-size: .75rem;
         --mb-1-5: 1rem;
         --size-img: 200px;
-    }
-
-    .qualification-container{
-        grid-template-columns: none;
     }
 
     .menu{
