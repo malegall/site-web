@@ -27,28 +27,23 @@ if(navClose){
 
 navLinks.forEach(item => {
     item.addEventListener('click', (event) => {
-        event.preventDefault(); // Empêcher le comportement par défaut du lien
-        const targetId = item.getAttribute("href"); // Récupérer l'ID de la cible
-        const targetSection = document.querySelector(targetId); // Sélectionner la section cible
-        const targetPosition = targetSection.offsetTop - navbarHeight; // Calculer la position de la section cible avec décalage
+        const targetId = item.getAttribute("href");
+        
+        if (!targetId.startsWith('#')) return;
+        
+        event.preventDefault();
+        const targetSection = document.querySelector(targetId);
+        const targetPosition = targetSection.offsetTop - navbarHeight;
 
-        // Faire défiler jusqu'à la section cible avec décalage
         window.scrollTo({
             top: targetPosition,
-            behavior: "smooth" // Défilement fluide
+            behavior: "smooth"
         });
     });
     item.addEventListener('click', () => {
         navMenu.classList.remove('open');
     });
 });
-
-const btn_project1 = document.querySelector(".btn-project1")
-const jsp = document.querySelector(".jsp-popup")
-
-btn_project1.addEventListener('click', ()=>{
-    jsp.classList.toggle('open');
-})
 
 const btn_project2 = document.querySelector(".btn-project2")
 const teleport_georges = document.querySelector(".teleport-georges-popup")
@@ -62,10 +57,6 @@ const el_gamal = document.querySelector(".el-gamal-popup")
 
 btn_project3.addEventListener('click', ()=>{
     el_gamal.classList.toggle('open');
-})
-
-document.querySelector(".popup-close1").addEventListener("click", ()=>{
-    jsp.classList.toggle('open');
 })
 
 document.querySelector(".popup-close2").addEventListener("click", ()=>{
